@@ -23,8 +23,8 @@ const mongoSanitize = require('express-mongo-sanitize');
 const sanitizeHTML = require('sanitize-html');
 
 const MongoStore = require('connect-mongo')
-const dbUrl =  'mongodb://localhost:27017/yelp-camp';
-// process.env.DB_URL ||
+const dbUrl = process.env.DB_URL || 'mongodb://localhost:27017/yelp-camp';
+
 // 'mongodb://localhost:27017/yelp-camp'
 
 // 
