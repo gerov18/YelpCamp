@@ -7,7 +7,7 @@ const Review = require('./models/review.js')
 module.exports.isLoggedIn = (req, res, next) =>{
     if(!req.isAuthenticated()){
         req.session.returnTo = req.originalUrl;
-        req.flash('error', 'You must be signed in');
+        req.flash('error', 'You must be signed in!');
         return res.redirect('/login');
     }
     next()
@@ -25,7 +25,7 @@ module.exports.validateCampground = (req, res, next) =>{
 }
 
 // middleware that checks wheter the user is the author of the campground 
-// therefore he can edit/delete it
+// therefore they can edit/delete it
 module.exports.isAuthor = async (req, res, next) => {
     const {id} = req.params;
     const campground = await Campground.findById(id)
